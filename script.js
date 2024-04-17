@@ -17,7 +17,7 @@ const collectEmployees = function() {
       salary = 0;
     }
 
-    employees[i] = { firstName, lastName, Number(salary)};
+    employees[i] = { firstName, lastName, salary: Number(salary)};
 
     const continueAdding = window.confirm("Do you want to add another employee?");
 
@@ -44,7 +44,7 @@ function displayAverageSalary(employeesArray) {
 
   const average = total / employeesArray.length;
 
-  console.log(`Average salary is: ${average}`)
+  console.log(`Average salary is: $${average}`)
 }
 
 // Select a random employee
