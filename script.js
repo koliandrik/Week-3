@@ -11,13 +11,13 @@ const collectEmployees = function() {
   while (!done) {
     const firstName = window.prompt("Please enter the employee's first name:");
     const lastName = window.prompt("Please enter the employee's last name:");
-    let salary = window.prompt("Please enter the employee's salary:");
+    let salary = Number(window.prompt("Please enter the employee's salary:"));
 
     while (isNaN(salary)) {
       salary = 0;
     }
 
-    employees[i] = { firstName, lastName, salary: Number(salary)};
+    employees[i] = {firstName, lastName, salary};
 
     const continueAdding = window.confirm("Do you want to add another employee?");
 
@@ -26,8 +26,6 @@ const collectEmployees = function() {
     } else {
       i++;
     }
-
-    console.log(salary)
   }
   return employees;
 }
@@ -38,8 +36,8 @@ function displayAverageSalary(employeesArray) {
   // TODO: Calculate and display the average salary
   let total = 0;
 
-  for (const employee of employeesArray){
-    total += employee.salary;
+  for (i of employeesArray){
+    total += i.salary;
   }
 
   const average = total / employeesArray.length;
